@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using DevBurguer.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevBurguer.Data
@@ -9,5 +10,7 @@ namespace DevBurguer.Data
             : base(options)
         {
         }
+
+        public DbSet<Snacks> Snacks { get; set; }
     }
 }
