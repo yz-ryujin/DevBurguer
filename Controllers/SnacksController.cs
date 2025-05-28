@@ -54,8 +54,10 @@ namespace DevBurguer.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Price,ImageUrl,IsAvailable,CreatedById,CreatedOn,ModifiedById,ModifiedOn")] Snacks snacks)
+        public async Task<IActionResult> Create(Snacks snacks)
         {
+            snacks.CreatedById = "Macro Code"; // exemplo de id do criador
+            snacks.CreatedOn = DateTime.Now; // Horário atual
             if (ModelState.IsValid)
             {
                 _context.Add(snacks);
