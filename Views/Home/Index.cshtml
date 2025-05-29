@@ -1,8 +1,167 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Início"; // Traduzido de "Home"
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row pt-4">
+
+    <div class="col-xl-8 col-12">
+
+
+
+
+        <section class="welcome-section mb-4 p-4 rounded bg-dark text-white d-flex align-items-center justify-content-between">
+            <div class="welcome-text">
+                <h2 class="display-4 fw-bold">Bem-vindo(a)!</h2> <p class="lead">Aproveite seus pedidos com o painel de gerenciamento de alimentos Dpopfood</p> <button class="btn btn-warning mt-3">Saiba mais</button>
+            </div>
+        </section>
+
+        <section class="analytic-section mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="fw-bold">Análise</h3> <a href="#" class="text-warning text-decoration-none">Ver mais <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="analytic-card bg-white p-3 rounded shadow-sm d-flex align-items-center">
+                        <div class="d-flex flex-column">
+                            <p class="mb-0 text-muted">Pedidos Concluídos</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                            <h4 class="mb-0">156</h4>
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> 15.6%</small>                            
+                            </div>
+                        </div>
+                        <div class="icon-wrapper rounded-circle bg-black text-success">
+                            <i class="fas fa-clipboard-check fa-lg"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="analytic-card bg-white p-3 rounded shadow-sm d-flex align-items-center">
+                        <div class="d-flex flex-column">
+                            <p class="mb-0 text-muted">Pedidos Concluídos</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h4 class="mb-0">156</h4>
+                                <small class="text-success"><i class="fas fa-arrow-up"></i> 15.6%</small>
+                            </div>
+                        </div>
+                        <div class="icon-wrapper rounded-circle bg-success text-success">
+                            <i class="fas fa-clipboard-check fa-lg"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="analytic-card bg-white p-3 rounded shadow-sm d-flex align-items-center">
+                        <div class="d-flex flex-column">
+                            <p class="mb-0 text-muted">Pedidos Concluídos</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h4 class="mb-0">156</h4>
+                                <small class="text-success"><i class="fas fa-arrow-up"></i> 15.6%</small>
+                            </div>
+                        </div>
+                        <div class="icon-wrapper rounded-circle bg-danger text-success">
+                            <i class="fas fa-clipboard-check fa-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-dishes-section mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="fw-bold">Pratos Populares</h3> <a href="#" class="text-warning text-decoration-none">Ver mais <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card h-100 border-0 shadow-sm bg-white text-center p-3 rounded-3">
+                        <img src="~/images/prato-1.jpg" class="card-img-top img-fluid rounded" alt="Meat Ball May">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Meat Ball May</h5>
+                            <div class="d-flex justify-content-between  align-items-center">
+                                <p class="card-text text-muted mb-1">Entrada</p> <span class="fw-bold fs-5 text-warning">$66</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card h-100 border-0 shadow-sm bg-white text-center p-3">
+                        <img src="~/images/prato-2.jpg" class="card-img-top img-fluid rounded" alt="Udang Semur">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Udang Semur</h5>
+                            <p class="card-text text-muted mb-1">Sopas</p> <span class="fw-bold fs-5 text-warning">$56</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card h-100 border-0 shadow-sm bg-white text-center p-3">
+                        <img src="~/images/prato-3.jpg" class="card-img-top img-fluid rounded w-100 h-auto" alt="Nasi Goreng">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Nasi Goreng</h5>
+                            <p class="card-text text-muted mb-1">Prato Principal</p> <span class="fw-bold fs-5 text-warning">$51</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <div class="col-xl-4 col-12">
+
+        <section class="prepared-order-section mb-4 row g-3">
+            <div class="bg-white p-4 rounded shadow-sm h-100">
+                <h3 class="fw-bold mb-3">Pedido em Preparação</h3> <div class="order-list mb-3">
+                    <div class="order-item d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <div>
+                            <div class="fw-bold">Pedido #1</div> <small class="text-muted">1 de Junho de 2025, 08:22 AM</small>
+                        </div>
+                        <span class="badge bg-warning text-dark">Pendente</span>
+                    </div>
+                    <div class="order-details">
+                        <div class="order-product d-flex align-items-center mb-3">
+                            <img src="~/images/prato-1.jpg" alt="Nasi Goreng Miniatura" class="rounded me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                            <div>
+                                <h5 class="mb-0">Nasi Goreng</h5>
+                                <small class="text-muted">Prato Principal</small>
+                            </div>
+                            <span class="ms-auto fw-bold">$51</span>
+                        </div>
+                        <div class="order-product d-flex align-items-center mb-3">
+                            <img src="~/images/prato-2.jpg" alt="Udang Semur Miniatura" class="rounded me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                            <div>
+                                <h5 class="mb-0">Udang Semur</h5>
+                                <small class="text-muted">Prato Principal</small>
+                            </div>
+                            <span class="ms-auto fw-bold">$56</span>
+                        </div>
+                        <div class="order-product d-flex align-items-center mb-3">
+                            <img src="~/images/prato-3.jpg" alt="Meat Ball May Miniatura" class="rounded me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                            <div>
+                                <h5 class="mb-0">Meat Ball May</h5>
+                                <small class="text-muted">Prato Principal</small>
+                            </div>
+                            <span class="ms-auto fw-bold">$66</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="address-section mb-3">
+                    <h4 class="fw-bold mb-2">Endereço</h4> <p class="mb-1 text-muted">Market 42, st. Sintitas, Lost Panamas</p>
+                    <p class="mb-2 text-muted">2484 Royal Ln, Mesa, New Jersey</p>
+                    <div class="map-placeholder border rounded overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3832.432282941623!2d-47.95480390321046!3d-16.146642899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93599be392fea99b%3A0x19f60d9f8477cbc1!2sRestaurante%20B%C3%A3o%20Tamb%C3%A9m!5e0!3m2!1spt-BR!2sbr!4v1748470693820!5m2!1spt-BR!2sbr" width="355" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div class="payment-summary border-top pt-3 mt-3">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Serviço</span> <span>+$1.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
+                        <span>Total</span> <span>+$123.00</span>
+                    </div>
+                    <button class="btn btn-warning w-100">Pedido sendo preparado</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
 </div>

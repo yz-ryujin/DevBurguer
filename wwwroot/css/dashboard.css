@@ -1,0 +1,599 @@
+﻿/* --- Variáveis de Cores e Fontes --- */
+/* Adicionado um tom de cinza para o fundo da página, um preto mais suave e a cor amarela do tema */
+:root {
+    --primary-dark: #121212; /* Um preto mais suave para sidebar e seções escuras */
+    --secondary-dark: #030203; /* Um cinza bem escuro para elementos dentro do primário escuro */
+    --background-light: #f5f6fa; /* Fundo principal mais claro, levemente acinzentado */
+    --text-light: #e0e0e0;
+    --text-slate: #757575;
+    --white: #fff;
+    --text-dark: #333333;
+    --text-muted-dark: #999999;
+    --text-muted-light: #666666;
+    --accent-yellow: #ffc107; /* O amarelo do tema */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilos Globais e do Body --- */
+body {
+    font-family: 'Inter', sans-serif; /* Sugestão de fonte moderna e limpa, Fontes do Google */
+    background-color: var(--background-light); /* Aplica o fundo claro */
+    color: var(--text-dark); /* Cor do texto padrão para o conteúdo claro */
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-dark); /* Garante que os títulos no conteúdo claro sejam escuros */
+    font-weight: 700; /* Títulos mais bold */
+}
+
+/* --- Layout Geral do Wrapper e Main Content --- */
+.wrapper {
+    min-height: 100vh;
+    background-color: var(--primary-dark); /* Fundo da tela toda, incluindo a sidebar */
+    display: flex; /* Garante que sidebar e main-content fiquem lado a lado */
+}
+
+.main-content {
+    margin-left: 280px; /* Espaço para a sidebar fixa, ajusta conforme a largura da sidebar */
+    background-color: var(--background-light); /* Fundo do conteúdo principal do dashboard */
+    padding: 2.5rem; /* Padding generoso */
+    flex-grow: 1; /* Ocupa o espaço restante */
+    box-shadow: -8px 0 20px var(--shadow-color); /* Sombra que projeta para o lado */
+    overflow-y: auto; /* Para rolagem se o conteúdo for grande */
+    position: relative; /* Para posicionamento de elementos filhos */
+    box-sizing: border-box;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 280px;
+    height: 100vh; /* Altura total da tela */
+    position: fixed;
+    z-index: 20;
+}
+
+    .sidebar .logo {
+        max-width: 60px; /* Ajuste o tamanho do logo */
+    }
+
+    .sidebar .nav-link {
+        color: var(--text-slate); /* Cor do texto dos itens de menu */
+        padding: 6px 15px;
+        border-radius: 50px;
+        transition: all 0.2s ease-in-out;
+        font-weight: 400;
+    }
+
+        .sidebar .nav-link i {
+            font-size: 1.1rem;
+            margin-right: 10px;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: var(--white); /* Fundo ao passar o mouse */
+            color: var(--text-dark);
+        }
+
+        .sidebar .nav-link.active {
+            background-color: var(--white); /* Item ativo com cor de destaque */
+            color: var(--primary-dark) !important; /* Texto escuro no item ativo */
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3); /* Sombra para o item ativo */
+        }
+
+
+/* --- Navbar Superior --- */
+.navbar-top {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .navbar-top .dashboard-activity {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--text-dark);
+    }
+
+    .navbar-top .search-bar .form-control {
+        border: none;
+        background-color: var(--white); /* Cor de fundo para o campo de busca */
+        padding: 0.75rem 1.25rem;
+        border-radius: 25px !important; /* Arredondamento completo */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Sombra interna sutil */
+        width: 300px; /* Largura fixa para o campo de busca */
+    }
+
+    .navbar-top .search-bar .input-group-text {
+        border: none;
+        background-color: var(--background-light);
+        color: var(--text-muted-light);
+        border-radius: 25px !important;
+        margin-left: -40px; /* Ajusta o ícone para dentro do campo */
+        z-index: 2;
+    }
+
+    .navbar-top .date-time {
+        padding: 0.75rem 1.25rem;
+        background-color: var(--white);
+        color: var(--text-muted-light);
+        border-radius: 25px !important; /* Arredondamento completo */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Sombra interna sutil */
+        font-size: 0.95rem;
+    }
+
+    .navbar-top .notification-icon {
+        color: var(--text-muted-light);
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
+
+        .navbar-top .notification-icon:hover {
+            color: var(--accent-yellow);
+        }
+
+    .navbar-top .user-avatar {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+
+/* --- Seções --- */
+section {
+    margin-bottom: 2.5rem; /* Mais espaçamento entre as seções */
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+    .section-header h3 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--text-dark);
+    }
+
+    .section-header .see-more {
+        font-weight: 600;
+        color: var(--accent-yellow) !important;
+        transition: color 0.2s ease;
+    }
+
+        .section-header .see-more:hover {
+/*            color: darken(var(--accent-yellow), 15%) !important;*/
+        }
+
+
+/* --- Welcome Section --- */
+.welcome-section {
+    background-image: url("../images/background-banner.png");
+    background-size: cover;
+    border-radius: 20px !important;
+    padding: 2.5rem !important;
+    color: var(--text-light);
+    position: relative; /* Para posicionar a imagem de fundo, se houver */
+}
+
+    .welcome-section .welcome-text h2 {
+        font-size: 2.8rem;
+        font-weight: 800; /* Mais impacto */
+        color: var(--text-light);
+        margin-bottom: 1rem;
+    }
+
+    .welcome-section .welcome-text p {
+        color: var(--text-muted-dark);
+        max-width: 80%; /* Ajuste para o texto */
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+    }
+
+    .welcome-section .btn-learn-more {
+        background-color: var(--accent-yellow);
+        color: var(--primary-dark);
+        border: none;
+        border-radius: 12px; /* Mais arredondado */
+        padding: 12px 30px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .welcome-section .btn-learn-more:hover {
+/*            background-color: darken(var(--accent-yellow), 10%);*/
+        }
+
+    .welcome-section .welcome-image {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 350px; /* Largura da imagem de fundo */
+        height: auto;
+        transform: translateX(20%); /* Para ela sair um pouco para fora */
+        opacity: 0.8; /* Um pouco transparente */
+        z-index: 1; /* Atrás do texto */
+    }
+
+        .welcome-section .welcome-image img {
+            border-radius: 15px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); /* Sombra para a imagem */
+        }
+
+    .welcome-section .welcome-text {
+        position: relative;
+        z-index: 2; /* Fica na frente da imagem */
+    }
+
+
+/* --- Analytic Cards --- */
+.analytic-card {
+    border-radius: 15px !important;
+    box-shadow: 0 8px 20px var(--shadow-color); /* Sombra mais profunda */
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .analytic-card:hover {
+        transform: translateY(-5px); /* Efeito suave no hover */
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .analytic-card .icon-wrapper {
+        width: 50px; /* Ícone um pouco maior */
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem; /* Ícone maior */
+    }
+
+        /* Ajustes de cor de fundo e ícone para cada tipo de card */
+        .analytic-card .icon-wrapper.bg-success-subtle {
+            background-color: rgba(40, 167, 69, 0.15) !important;
+            color: var(--accent-green) !important;
+        }
+
+        .analytic-card .icon-wrapper.bg-primary-subtle {
+            background-color: rgba(0, 123, 255, 0.15) !important;
+            color: var(--accent-blue) !important;
+        }
+
+        .analytic-card .icon-wrapper.bg-danger-subtle {
+            background-color: rgba(220, 53, 69, 0.15) !important;
+            color: var(--accent-red) !important;
+        }
+
+    .analytic-card h4 {
+        font-size: 2rem; /* Valor maior */
+        font-weight: 800; /* Bem bold */
+        margin-bottom: 0;
+    }
+
+    .analytic-card small {
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+        .analytic-card small i {
+            margin-right: 5px;
+        }
+
+    .analytic-card p {
+        font-size: 0.9rem;
+        color: var(--text-muted-light);
+        margin-bottom: 0;
+    }
+
+
+/* --- Popular Dishes Cards --- */
+.dish-card.card {
+    border-radius: 20px !important; /* Mais arredondado */
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .dish-card.card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+/* Aplica o estilo de imagem quadrada */
+.dish-card .ratio {
+    border-radius: 20px 20px 0 0 !important; /* Arredonda apenas os cantos superiores do contêiner da imagem */
+    overflow: hidden; /* Garante que a imagem se ajuste ao arredondamento */
+}
+
+.dish-card .card-img-top {
+    /* As propriedades object-fit e width/height serão definidas pelo .ratio e .object-fit-cover */
+    /* Remova as propriedades de arredondamento e tamanho fixo daqui se existirem */
+}
+
+.dish-card .card-body {
+    text-align: left;
+
+}
+
+.dish-card .card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.dish-card .category {
+    font-size: 0.9rem;
+    color: var(--text-muted-light);
+    margin-bottom: 1rem;
+}
+
+.dish-card .price {
+    font-size: 1.8rem; /* Preço maior */
+    font-weight: 800;
+    color: var(--accent-yellow);
+}
+
+/* --- Prepared Order Section --- */
+.prepared-order-section > div { /* Aplica ao div interno da section */
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    height: 100%; /* Garante que o card ocupe toda a altura disponível na coluna */
+}
+
+.prepared-order-section h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.order-list .order-item {
+    background-color: #fcfcfc; /* Um fundo muito leve para o item principal do pedido */
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-bottom: none !important; /* Remove a borda inferior do Bootstrap */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+    .order-list .order-item .fw-bold {
+        font-size: 1.1rem;
+        color: var(--text-dark);
+    }
+
+    .order-list .order-item small {
+        font-size: 0.85rem;
+        color: var(--text-muted-light);
+    }
+
+    .order-list .order-item .badge {
+        padding: 0.5em 0.8em;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+.order-details .order-product {
+    padding: 12px 0;
+    border-bottom: 1px dashed #eee; /* Linha tracejada suave */
+    align-items: center;
+}
+
+    .order-details .order-product:last-child {
+        border-bottom: none;
+    }
+
+    .order-details .order-product img {
+        border-radius: 10px !important;
+        width: 70px !important; /* Miniatura um pouco maior */
+        height: 70px !important;
+        object-fit: cover;
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+
+    .order-details .order-product h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .order-details .order-product small {
+        font-size: 0.85rem;
+        color: var(--text-muted-light);
+    }
+
+    .order-details .order-product span {
+        font-weight: 700;
+        color: var(--accent-yellow);
+        font-size: 1.1rem;
+    }
+
+.address-section {
+    margin-top: 2rem;
+}
+
+    .address-section h4 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .address-section p {
+        font-size: 0.95rem;
+        color: var(--text-muted-light);
+        margin-bottom: 0.5rem;
+    }
+
+.map-placeholder {
+    height: 200px; /* Altura um pouco maior para o mapa */
+    border-radius: 15px !important;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.08); /* Sombra interna para o mapa */
+}
+
+    .map-placeholder iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block; /* Remove espaços extras */
+    }
+
+.payment-summary {
+    border-top: 1px solid #eeeeee; /* Linha separadora mais suave */
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+
+    .payment-summary span {
+        font-size: 1.05rem;
+        color: var(--text-dark);
+    }
+
+    .payment-summary .total span {
+        font-weight: 800; /* Total em negrito */
+        font-size: 1.8rem; /* Tamanho maior para o total */
+        color: var(--accent-yellow);
+    }
+
+    .payment-summary .btn-order-prepared {
+        background-color: var(--accent-yellow);
+        color: var(--primary-dark);
+        border: none;
+        border-radius: 12px; /* Mais arredondado */
+        padding: 12px 30px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .payment-summary .btn-order-prepared:hover {
+/*            background-color: darken(var(--accent-yellow), 10%);*/
+            transform: translateY(-2px); /* Efeito suave no hover */
+        }
+
+/* --- Estilos Responsivos (ajustes) --- */
+@media (max-width: 1199.98px) { /* Ajuste para tablets e laptops menores (col-xl) */
+    .main-content {
+        padding: 2rem;
+    }
+
+    .navbar-top .search-bar {
+        width: 35%; /* Ocupa um pouco mais de espaço */
+    }
+
+    .welcome-section .welcome-text h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 991.98px) { /* Para telas menores que large (lg) */
+    .wrapper {
+        flex-direction: column; /* Sidebar empilha acima do conteúdo */
+    }
+
+    .sidebar {
+        width: 100%;
+        border-radius: 0; /* Remove arredondamento na base */
+        padding: 1.5rem;
+    }
+
+    .sidebar-bottom {
+        margin-top: 1.5rem;
+    }
+
+    .main-content {
+        border-radius: 0; /* Remove arredondamento no topo do main-content */
+        padding: 1.5rem;
+    }
+
+        .navbar-top .search-bar {
+            order: 3; /* Coloca a barra de pesquisa por último no mobile */
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .navbar-top .header-right {
+            order: 2; /* Coloca os ícones à direita antes da pesquisa */
+            width: auto;
+            justify-content: center;
+        }
+
+        .navbar-top .dashboard-activity {
+            order: 1; /* Coloca o título primeiro */
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+    .welcome-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem !important;
+    }
+
+        .welcome-section .welcome-image {
+            position: static; /* Remove o posicionamento absoluto no mobile */
+            transform: none; /* Remove a transformação */
+            width: 80%; /* Ajusta o tamanho da imagem */
+            margin: 1.5rem auto 0 auto; /* Centraliza a imagem */
+            opacity: 1;
+        }
+
+        .welcome-section .welcome-text p {
+            max-width: 100%;
+        }
+
+    .analytic-card, .dish-card.card {
+        margin-bottom: 1rem;
+    }
+
+    .prepared-order-section > div {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* Telas muito pequenas (celular) */
+    .main-content {
+        padding: 1rem;
+    }
+
+    .navbar-top .date-time {
+        display: none; /* Esconde a data/hora para economizar espaço */
+    }
+
+    .analytic-card .icon-wrapper {
+        width: 25px; /* Ícone um pouco menor */
+        height: 25px;
+        font-size: 1.5rem;
+    }
+
+    .analytic-card h4 {
+        font-size: 1.5rem;
+    }
+
+    .dish-card .card-title {
+        font-size: 1.2rem;
+    }
+
+    .dish-card .price {
+        font-size: 1.5rem;
+    }
+
+    .prepared-order-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .payment-summary .total span {
+        font-size: 1.5rem;
+    }
+}
+
